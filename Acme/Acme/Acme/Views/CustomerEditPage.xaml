@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:input="clr-namespace:Telerik.XamarinForms.Input;assembly=Telerik.XamarinForms.Input"
+             xmlns:models="clr-namespace:Acme.Models;assembly=Acme"
+             xmlns:dataForm="clr-namespace:Telerik.XamarinForms.Input.DataForm;assembly=Telerik.XamarinForms.Input"
+             xmlns:common="clr-namespace:Telerik.XamarinForms.Common;assembly=Telerik.XamarinForms.Common"
+             x:Class="Acme.Views.CustomerEditPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <dataForm:DataFormEditorStyle x:Key="CustomEditorStyle" 
+                                          HeaderFontSize="17" 
+                                          HeaderForeground="White" 
+                                          FeedbackFontSize="13" 
+                                          PositiveFeedbackImage="success.png"
+                                          NegativeFeedbackImage="fail.png"
+                                          Height="70" 
+                                          FeedbackImageSize="10,10">
+                <dataForm:DataFormEditorStyle.Background>
+                    <common:Background Fill="#3D6978" StrokeColor="#CCFF00" StrokeWidth="2" StrokeLocation="Bottom"/>
+                </dataForm:DataFormEditorStyle.Background>
+                <dataForm:DataFormEditorStyle.NegativeFeedbackBackground>
+                    <common:Background Fill="#30FF004C" StrokeColor="#FF004C" StrokeWidth="2" StrokeLocation="All"/>
+                </dataForm:DataFormEditorStyle.NegativeFeedbackBackground>
+            </dataForm:DataFormEditorStyle>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <input:RadDataForm x:Name="DataForm" EditorStyle="{StaticResource CustomEditorStyle}" BackgroundColor="#345966">
+            <input:RadDataForm.Source>
+                <models:Customer/>
+            </input:RadDataForm.Source>
+        </input:RadDataForm>
+    </ContentPage.Content>
+</ContentPage>

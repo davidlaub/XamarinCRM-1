@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Acme.ViewModels;assembly=Acme"
+             x:Class="Acme.Views.EmployeeDetailPage">
+    <ContentPage.BindingContext>
+        <viewModels:EmployeeDetailViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="{Binding SelectedEmployee.FirstName}" FontSize="Medium"/>
+            <Label Text="{Binding SelectedEmployee.LastName}" FontSize="Small"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
